@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Pizza chez Chitello
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/"><ion-icon slot="icon-only" name="arrow-round-back"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ion-padding">
+    <div *ngFor="let p of carte">
+      <ion-card *ngIf="carte">
+        <ion-card-header >
+          <img src={{p.url}}>
+          <ion-card-title> {{p.title}} </ion-card-title>
+          <ion-card-subtitle> {{p.price | currency:'EUR'}} </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{p.description}}
+          <ion-button fill="clear" float-right (click)="addToCart(this.cartService.convertToProduct(p))">
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openCart()" #cart>
+      <div class="cart-length">{{ cartItemCount | async }}</div>
+      <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+      <ion-buttons>
+          <ion-button href="https://www.google.fr/maps/place/8+Rue+du+Mont+Blanc,+74000+Annecy/@45.9125968,6.1312439,17z/data=!3m1!4b1!4m5!3m4!1s0x478b8f8d65c72b05:0x81f90e731be54962!8m2!3d45.9125968!4d6.1334326"><ion-icon ios="ios-pin" md="md-pin"></ion-icon></ion-button>
+          8 Rue du Mont Blanc, 74000 Annecy
+        </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

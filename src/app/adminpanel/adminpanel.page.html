@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Commande du jour</ion-title>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/"><ion-icon slot="icon-only" name="home"></ion-icon></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+          <ion-list>
+            <ion-item>
+              <ion-label fixed class="fixedLabel" ><h4>Date</h4></ion-label>
+              <ion-label><h4>Nom</h4></ion-label>
+              <ion-label><h4>Prénom</h4></ion-label>
+              <ion-label><h4>Numéro de Tel</h4></ion-label>
+              <ion-label><h4>Commande</h4></ion-label>
+              <ion-label><h4>Quantité</h4></ion-label>
+              <ion-label><h4>Effectué</h4></ion-label>
+            </ion-item>
+            <div *ngFor="let p of reservation">
+              <ion-item *ngIf="reservation">
+              <ion-label fixed class="fixedLabel" >{{p.datee}}</ion-label>
+              <ion-label>{{p.nom}}</ion-label>
+              <ion-label>{{p.prenom}}</ion-label>
+              <ion-label>{{p.numtel}}</ion-label>
+              <ion-label>{{p.title}}</ion-label>
+              <ion-label>{{p.qte}}</ion-label>
+              <ion-label><button fill="clear" (click)="deletepizzacommander(p._id)" >
+                <ion-icon name="checkmark" color="success"></ion-icon>
+              </button></ion-label>
+            </ion-item>
+          </div>
+          </ion-list>

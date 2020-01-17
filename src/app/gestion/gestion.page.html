@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Gestion de la carte
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/"><ion-icon slot="icon-only" name="home"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #myForm="ngForm">
+    <ion-text color="primary">
+      <h2>Creer nouvelle pizza</h2>
+    </ion-text>
+    <ion-item>
+      <ion-label>Plat du jour : </ion-label>
+      <ion-toggle [(ngModel)]="form.plat_du_jour" name="plat_du_jour" disabled="false"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label><h3>Nom : </h3></ion-label>
+      <ion-input required type="text" [(ngModel)]="form.nom" name="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><h3>Prix : </h3></ion-label>
+      <ion-input required type="number"  [(ngModel)]="form.price" name="price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><h3>Url de la photo : </h3></ion-label>
+      <ion-input required type="text" [(ngModel)]="form.url" name="url"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><h3>Description : </h3></ion-label>
+      <ion-input required type="text" [(ngModel)]="form.description" name="description"></ion-input>
+    </ion-item>
+  </form>
+  <ion-button [disabled]="!myForm.form.valid" expand="full" (click)="create()">
+    Ajouter Pizza
+  </ion-button>
+  <div class="ion-padding">
+    Pizzeria Chitello
+    <div *ngFor="let p of carte">
+      <ion-card *ngIf="carte">
+        <ion-card-header >
+          <img src={{p.url}}>
+          <ion-card-title> {{p.title}} </ion-card-title>
+          <ion-card-subtitle> {{p.price | currency:'EUR'}} </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{p.description}}
+          <ion-button fill="clear" float-right (click)="delete(p.title)" >
+            <ion-icon name="close" color="danger"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+<ion-footer no-shadow>
+</ion-footer>
