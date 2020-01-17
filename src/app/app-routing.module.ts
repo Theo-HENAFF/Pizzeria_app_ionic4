@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'gestion', loadChildren: './gestion/gestion.module#GestionPageModule' },
   { path: 'carte', loadChildren: './carte/carte.module#CartePageModule' },
   { path: 'panier', loadChildren: './panier/panier.module#PanierPageModule' },
-  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
 
 
 

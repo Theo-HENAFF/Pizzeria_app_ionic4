@@ -1,12 +1,8 @@
 <ion-content fullscreen>
-
-  <div class="ion-text-end">
-    <ion-button (click)="close()" fill="clear" color="dark">
+  <div class="ion-padding">
+    <ion-button (click)="close()" fill="clear" color="dark" float-right>
       <ion-icon name="close" slot="start"></ion-icon>
     </ion-button>
-  </div>
-
-  <div class="ion-padding">
     <ion-text color="primary">
       <h4>Votre panier</h4>
     </ion-text>
@@ -18,29 +14,27 @@
           </ion-row>
 
           <ion-row class="ion-align-items-center">
-              <ion-button color="medium" fill="clear" (click)="decreaseCartItem(p)">
+              <ion-button class="add_remove" color="medium" fill="clear" (click)="decreaseCartItem(p)">
                 <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
-              </ion-button>
+              </ion-button >
               {{ p.amount }}
-
-              <ion-button color="medium" fill="clear" (click)="increaseCartItem(p)">
+              <ion-button class="add_remove" color="medium" fill="clear" (click)="increaseCartItem(p)">
                 <ion-icon name="add-circle" slot="icon-only"></ion-icon>
               </ion-button>
 
-              <ion-button color="medium" fill="clear" float-right (click)="removeCartItem(p)">
+              <ion-button class="add_remove" color="medium" fill="clear" float-right (click)="removeCartItem(p)">
                 <ion-icon name="close-circle" slot="icon-only"></ion-icon>
               </ion-button>
           </ion-row>
           <ion-row>
-              Prix : <ion-label class="ion-text-right">{{ p.amount * p.price | currency:'EUR' }}</ion-label>
+              Prix : {{ p.amount * p.price | currency:'EUR' }}
           </ion-row>
         </ion-grid>
       </ion-item>
       <ion-item>
         <ion-grid>
           <ion-row>
-              <b>Total du panier : </b>
-              <h6><b>{{ getTotal() | currency:'EUR' }}</b></h6>
+              <b>Total du panier : {{ getTotal() | currency:'EUR' }}</b>
           </ion-row>
         </ion-grid>
       </ion-item>
