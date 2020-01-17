@@ -34,7 +34,7 @@ ionic serve
 ``` 
 #### Details :
 The login part is not yet implemented so application contains "hidden" admin pages. 
-To get acces to it follow these links: http://localhost:8100/adminpanel // http://localhost:8100/gestion.
+To get acces to it follow these links: http://localhost:8100/adminpanel  http://localhost:8100/gestion.
 
 #### Enjoy :) 
 Loïck COMBRIE , Théo HENAFF , Chiheb NASRI.
