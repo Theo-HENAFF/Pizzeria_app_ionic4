@@ -16,8 +16,8 @@ In this app you can find multiple functionalities such as : A dynamic cart , an 
 4. Download and install NodeJS https://nodejs.org/en/.
 
 ### To run the app :
-1. Clone the repository
-2. In the your local app repository run to install dependencies
+1. Clone the git
+2. In your local app repository run the following command in a linux shell or a windows command terminal to install dependencies
 ```sh
 npm install
 ```
