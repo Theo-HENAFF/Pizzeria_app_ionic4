@@ -26,7 +26,7 @@ npm install
 mkdir data
 mongod --dbpath ./data
 ```
-4. Add this workflow to postman https://www.getpostman.com/collections/5e74fc82d57a2791204e and run the commands to fill your MongoDB.
+4. Add this workflow to postman https://app.getpostman.com/join-team?invite_code=5c24c9447d4bde34ee171e8ddc84f691&ws=212a851f-a193-4747-81cf-a83895b7d663 and run the commands to fill your MongoDB.
 5. Run the following commands to launch the app (Don't forget to activate CORS).
 ```sh
 node app.js
