@@ -1,19 +1,19 @@
 ion-fab-button {
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
   }
 
-  .cart-icon {
-    font-size: 50px;
-  }
+.cart-icon {
+  font-size: 30px;
+}
 
-  .cart-length {
-    color: var(--ion-color-primary);
-    position: absolute;
-    top: 18px;
-    left: 25px;
-    font-weight: 600;
-    font-size: 1em;
-    min-width: 25px;
-    z-index: 10;
-  }
+.cart-length {
+  color: var(--ion-color-primary);
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-weight: 600;
+  font-size: 1em;
+  min-width: 25px;
+  z-index: 10;
+}
